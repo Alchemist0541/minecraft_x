@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:minecraft/views/login_page.dart';
+import 'package:minecraft/views/home.dart';
+// import 'package:minecraft/views/login_page.dart';
+import 'package:minecraft/views/news.dart';
+import 'package:minecraft/views/skins.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +15,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // theme: ThemeData(primarySwatch: Colors.grey),
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      initialRoute: '/',
+      routes: {
+        '/' :(context) => Home(),
+        '/news' :(context) => News_page(),
+        '/skins' :(context) => Skins(),
+      },
     );
   }
 }
